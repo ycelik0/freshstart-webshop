@@ -1,0 +1,178 @@
+@use "./variables.scss" as variables;
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  height: 75px;
+  background-color: rgba($color: variables.$primaryColor, $alpha: 1);
+}
+.navbar__brand {
+  width: 7rem;
+  text-align: center;
+  font-size: 1.75rem;
+  z-index: 100;
+  a {
+    color: white;
+    text-decoration: none;
+    letter-spacing: 0.25rem;
+    transition-duration: 150ms;
+  }
+  &:hover a {
+    letter-spacing: 0.5rem;
+  }
+}
+.navbar__icon {
+  width: 1.75rem;
+  height: 1.75rem;
+  fill: white;
+  color: white;
+}
+.navbar__icon.hamburger-menu {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+  span {
+    display: block;
+    width: 100%;
+    height: 0.25rem;
+    position: absolute;
+    border-radius: 1rem;
+    background-color: white;
+    transition-duration: 200ms;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.25s ease-in-out;
+    -moz-transition: 0.25s ease-in-out;
+    -o-transition: 0.25s ease-in-out;
+    transition: 0.25s ease-in-out;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+    &:first-child {
+      top: 0px;
+    }
+    &:nth-child(2) {
+      top: 10px;
+    }
+    &:last-child {
+      top: 20px;
+    }
+  }
+}
+.navbar__icon.hamburger-menu.active span {
+  position: absolute;
+  background-color: variables.$secondaryColor;
+  &:first-child {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  &:nth-child(2) {
+    width: 0%;
+    opacity: 0;
+  }
+  &:last-child {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+}
+.navbar__icon.shoppingcart-icon {
+  fill: white;
+}
+.navbar__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  background-color: variables.$primaryColor;
+  list-style: none;
+  text-align: center;
+  opacity: 0;
+  @media screen and (min-width: 800px) {
+    flex-direction: row;
+    opacity: 1;
+    pointer-events: all;
+  }
+  pointer-events: none;
+  li a {
+    position: relative;
+    transition: all 1s;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 0.5rem;
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 0%;
+      background-color: transparentize(variables.$secondaryColor, 0.25);
+      border-radius: 0.2rem;
+      height: 1px;
+      text-align: left;
+      opacity: 0;
+    }
+    &:hover {
+      color: #fff;
+      z-index: 1;
+      &::before {
+        z-index: -10;
+        animation: linkFill 0.75s forwards;
+        -webkit-animation: linkFill 0.75s forwards;
+        -moz-animation: linkFill 0.75s forwards;
+        opacity: 1;
+        width: 100%;
+      }
+    }
+  }
+}
+.navbar__list.active {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 1;
+  pointer-events: all;
+}
+@keyframes linkFill {
+  0% {
+    width: 0%;
+    height: 1px;
+  }
+  50% {
+    width: 100%;
+    height: 1px;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    background-color: transparentize(variables.$secondaryColor, 0.25);
+  }
+}

@@ -1,0 +1,53 @@
+@use './variables.scss' as variables;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', 'Roboto', sans-serif;
+}
+
+html,
+body,
+#root {
+  background-color: #F5F5F5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+main {
+  padding-top: 75px;
+  scroll-padding-top: 75px;
+}
+
+button {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.error__page-title {
+  background-color: rgb(176, 65, 63);
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.error__page-status,
+.error__page-message {
+  text-align: center;
+  margin: 1rem 0;
+  font-size: 1.5rem;
+}
+
+footer {
+  background-color: variables.$primaryColor;
+  color: white;
+  text-align: center;
+  padding: .25rem;
+}

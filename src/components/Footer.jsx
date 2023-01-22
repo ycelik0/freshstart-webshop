@@ -3,7 +3,7 @@ import React from 'react'
 function Footer() {
   return (
     <footer>
-      Footer
+      Kicks © 2023. All Rights Reserved
     </footer>
   )
 }

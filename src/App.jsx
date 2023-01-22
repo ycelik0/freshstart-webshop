@@ -1,17 +1,26 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route } from "react-router-dom";
 import Root from './Root'
-import Test from './routes/Test'
 import HomePage from './routes/HomePage'
+import Test from './routes/Test'
 import ErrorPage from './ErrorPage'
 
 const router = createBrowserRouter([
-  createRoutesFromElements(
-    <Route path="/" element={<Root />} errorElement={<ErrorPage />}>
-      <Route index element={<div>Home</div>} />
-      <Route path='test' element={<div>Test</div>} />
-    </Route>
-  )
+  {
+    path: '/',
+    element: <Root />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        index: true,
+        element: <HomePage />,
+      },
+      {
+        path: '/test',
+        element: <Test />,
+      },
+    ]
+  }
 ]);
 
 function App() {
