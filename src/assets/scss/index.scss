@@ -51,3 +51,11 @@ footer {
   text-align: center;
   padding: .25rem;
 }
+
+::-webkit-scrollbar {
+  width: .25rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: variables.$secondaryColor;
+}

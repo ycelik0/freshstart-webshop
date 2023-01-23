@@ -1,0 +1,147 @@
+@use "./variables.scss" as variables;
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 2rem 0;
+  overflow-x: hidden;
+  .hero__header {
+    width: 150%;
+    translate: -35%;
+    @media screen and (min-width: 800px) {
+      width: 100%;
+      translate: 0;
+    }
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0.25rem;
+    @media screen and (min-width: 800px) {
+      flex-direction: row;
+    }
+    gap: 0.5rem;
+    width: 100%;
+    .img-container {
+      width: 100%;
+      height: auto;
+      overflow: hidden;
+      position: relative;
+      @media screen and (min-width: 800px) {
+        flex-direction: row;
+        width: 50%;
+        height: 23rem;
+      }
+      .hero__header {
+        width: 100%;
+        object-fit: cover;
+        object-position: center -3rem;
+        translate: 0 0 50rem;
+        transition: all 300ms;
+        height: 18rem;
+        &:hover.hero__header {
+          filter: blur(4px);
+          width: 110%;
+          translate: -5% 0;
+        }
+        &:hover ~ .hero-text {
+          bottom: 5rem;
+          opacity: 1;
+        }
+        @media screen and (min-width: 800px) {
+          height: auto;
+        }
+      }
+      .hero-text {
+        background-color: rgba(255, 255, 255, 0.3);
+        color: black;
+        backdrop-filter: blur(2px);
+        border-radius: 0.25rem;
+        position: absolute;
+        bottom: 1rem;
+        left: 50%;
+        translate: -50% 0;
+        transition: all 300ms;
+        margin: 0 auto;
+        width: 20rem;
+        pointer-events: none;
+        opacity: 0;
+        @media screen and (min-width: 800px) {
+          width: 30rem;
+          font-size: 1.25rem;
+          padding: 0.25rem 1rem;
+        }
+      }
+    }
+  }
+}
+
+.options {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  @media screen and (min-width: 800px) {
+    flex-direction: row;
+  }
+  .option__card {
+    position: relative;
+    max-width: 30rem;
+    overflow: none;
+    margin: 0 auto;
+    @media screen and (min-width: 800px) {
+      flex-direction: row;
+      margin: 0 0.25rem;
+    }
+    img {
+      width: 100%;
+      max-height: 50rem;
+      object-fit: cover;
+      object-position: center;
+      transition: all 300ms;
+    }
+    @media screen and (min-width: 800px) {
+      height: auto;
+    }
+    > a {
+      height: auto;
+      width: auto;
+    }
+    overflow: hidden;
+    .option__button {
+      background-color: variables.$primaryColor;
+      color: white;
+      position: absolute;
+      bottom: 5rem;
+      left: 0;
+      right: 0;
+      font-size: 1.25rem;
+      text-decoration: none;
+      text-align: center;
+      width: max-content;
+      margin: 0 auto;
+      padding: 0.5rem 1rem;
+      transition: variables.$transition_4;
+      pointer-events: none;
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: block;
+        height: 0.30rem;
+        width: 0%;
+        background-color: variables.$secondaryColor;
+        transition: 300ms;
+      }
+    }
+    &:hover .option__button::before {
+    width: 100%;
+    }
+  }
+}

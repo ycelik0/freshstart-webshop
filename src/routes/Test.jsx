@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 
-function Root() {
+function Test() {
   return (
     <h1>Test</h1>
   )
 }
 
-export default Root
+export default Test

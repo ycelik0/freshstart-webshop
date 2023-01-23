@@ -1,9 +1,15 @@
-import React, { useState } from 'react'
+import React from "react";
+import Hero from "../components/Hero";
+import Options from "../components/HomeOptions";
+import "../assets/scss/HomePage.scss";
 
-function Root() {
+function HomePage() {
   return (
-    <h1>Home</h1>
-  )
+    <>
+      <Hero />
+      <Options />
+    </>
+  );
 }
 
-export default Root
+export default HomePage;
