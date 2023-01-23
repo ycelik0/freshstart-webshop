@@ -1,0 +1,71 @@
+@use './variables.scss' as variables;
+
+.aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: calc(75px + 1.5rem) 0 1rem 1rem;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 90;
+  @media screen and (min-width: 800px) {
+    width: 30rem;
+  }
+  background-color: #fff;
+  translate: 100% 0;
+  transition: variables.$transition_4;
+  .close_button {
+    position: absolute;
+    top: calc(75px + 1.5rem);
+    right: 1rem;
+    width: 1.5rem;
+    height: auto;
+  }
+}
+.aside.active {
+  translate: 0% 0;
+}
+.shoppingcart-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  overflow-x: none;
+  overflow-y: scroll;
+  padding-right: .5rem;
+  max-height: 40rem;
+}
+.shoppingcart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  div {
+    display: flex;
+    align-items: center;
+    img {
+      max-width: 8rem;
+    }
+  }
+}
+.shoppingcart-buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-right: .5rem;
+}
+.shoppingcart-button {
+  background-color: rgb(0, 185, 0);
+  color: white;
+  text-decoration: none;
+  padding: .75rem 1.25rem;
+  border-radius: .4rem;
+  &:hover {
+    background-color: rgb(0, 153, 0);
+  }
+}
+.shoppingcart-button.shoppingcart-edit {
+  background-color: white;
+  color: rgb(0, 185, 0);
+}

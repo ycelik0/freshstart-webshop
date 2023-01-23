@@ -1,9 +1,10 @@
 import React from 'react'
 import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route } from "react-router-dom";
 import Root from './Root'
+import ErrorPage from './ErrorPage'
 import HomePage from './routes/HomePage'
 import OptionPage from './routes/OptionPage'
-import ErrorPage from './ErrorPage'
+import ShoppingCartPage from './routes/ShoppingCartPage';
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
       {
         path: '/option/:option',
         element: <OptionPage />,
+      },
+      {
+        path: '/shoppingcart',
+        element: <ShoppingCartPage />,
       },
     ]
   }
