@@ -4,7 +4,7 @@ function HomeOptions() {
   return (
     <div className="options">
       <div className="option__card option__card-1">
-        <a href="/">
+        <a href="/option/men">
           <img src="/img/men-option.png" alt="men-option" />
           <button className="option__button">
             Our Men Collection
@@ -12,7 +12,7 @@ function HomeOptions() {
         </a>
       </div>
       <div className="option__card option__card-2">
-        <a href="/">
+        <a href="/option/women">
           <img src="/img/women-option.png" alt="men-option" />
           <button className="option__button">
             Our Women Collection
@@ -20,7 +20,7 @@ function HomeOptions() {
         </a>
       </div>
       <div className="option__card option__card-3">
-        <a href="/">
+        <a href="/option/kids">
           <img src="/img/kids-option.png" alt="men-option" />
           <button className="option__button">
             Our Kids Collection
