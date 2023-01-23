@@ -40,13 +40,13 @@ function Navbar() {
       </div>
       <ul className={`navbar__list ${menuActive}`}>
         <li>
-          <Link to='/test' onClick={()=>{setMenuActive('unactive')}}>Men</Link>
+          <Link to='/option/men' onClick={()=>{setMenuActive('unactive')}}>Men</Link>
         </li>
         <li>
-          <Link to='/test' onClick={()=>{setMenuActive('unactive')}}>Women</Link>
+          <Link to='/option/women' onClick={()=>{setMenuActive('unactive')}}>Women</Link>
         </li>
         <li>
-          <Link to='/test' onClick={()=>{setMenuActive('unactive')}}>Kids</Link>
+          <Link to='/option/kids' onClick={()=>{setMenuActive('unactive')}}>Kids</Link>
         </li>
       </ul>
       <button className={`navbar__icon hamburger-menu ${menuActive}`}

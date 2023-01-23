@@ -2,7 +2,7 @@ import React from 'react'
 import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route } from "react-router-dom";
 import Root from './Root'
 import HomePage from './routes/HomePage'
-import Test from './routes/Test'
+import OptionPage from './routes/OptionPage'
 import ErrorPage from './ErrorPage'
 
 const router = createBrowserRouter([
@@ -16,8 +16,8 @@ const router = createBrowserRouter([
         element: <HomePage />,
       },
       {
-        path: '/test',
-        element: <Test />,
+        path: '/option/:option',
+        element: <OptionPage />,
       },
     ]
   }
